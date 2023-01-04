@@ -8,6 +8,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ContentComponent } from './content/content.component';
 import { AsideComponent } from './aside/aside.component';
 import { FormsModule } from '@angular/forms';
+import { InternationalPhoneFormatPipe } from './international-phone-format.pipe';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     FooterComponent,
     ContentComponent,
-    AsideComponent
+    AsideComponent,
+    InternationalPhoneFormatPipe
     ],
   imports: [
     BrowserModule,
