@@ -1,6 +1,6 @@
 # Tp03WeberKlipfelBrice
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4 and is based on Tp02WeberKlipfelBrice.
 
 ## Development server
 
