@@ -19,11 +19,12 @@
                 <div class="form-container">
                     <div class="item">
                         <label for="civility">Civility</label>
-                        <select id="civility" [(ngModel)]="civility" name="civility" required>
+                        <select #formCivility="ngModel" id="civility" [(ngModel)]="civility" name="civility" required>
                             <option value="mister">Mr.</option>
                             <option value="madame">Ms.</option>
                             <option value="miss">Miss.</option>
                         </select>
+                        <div *ngIf="formCivility.touched && formCivility.invalid" class="alert">Civility is required.</div>
                     </div>
                     <div class="item">
                         <label for="name">Name</label>
