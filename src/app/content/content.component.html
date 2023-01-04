@@ -27,11 +27,13 @@
                     </div>
                     <div class="item">
                         <label for="name">Name</label>
-                        <input id="name" [(ngModel)]="name" type="text" name="name" required>
+                        <input #formName="ngModel" [(ngModel)]="name" type="text" name="name" required>
+                        <div *ngIf="formName.touched && formName.invalid" class="alert">Name is required.</div>
                     </div>
                     <div class="item">
                         <label for="fname">Firstname</label>
-                        <input id="fname" [(ngModel)]="fname" type="text" name="fname" required>
+                        <input #formFname="ngModel" id="fname" [(ngModel)]="fname" type="text" name="fname" required>
+                        <div *ngIf="formFname.touched && formFname.invalid" class="alert">Firstname is required.</div>
                     </div>
                 </div>
             </fieldset>
@@ -40,23 +42,28 @@
                 <div class="form-container">
                     <div class="item">
                         <label for="snum">Street number</label>
-                        <input id="snum" [(ngModel)]="snum" type="text" name="snum" required>
+                        <input #formSnum="ngModel" id="snum" [(ngModel)]="snum" type="text" name="snum" required>
+                        <div *ngIf="formSnum.touched && formSnum.invalid" class="alert">Street number is required.</div>
                     </div>
                     <div class="item">
                         <label for="sname">Street name</label>
-                        <input id="sname" [(ngModel)]="sname" type="text" name="sname" required>
+                        <input #formSname="ngModel" id="sname" [(ngModel)]="sname" type="text" name="sname" required>
+                        <div *ngIf="formSname.touched && formSname.invalid" class="alert">Street name is required.</div>
                     </div>
                     <div class="item">
                         <label for="pcode">Postal code</label>
-                        <input id="pcode" [(ngModel)]="pcode" type="text" name="pcode" required>
+                        <input #formPcode="ngModel" id="pcode" [(ngModel)]="pcode" type="text" name="pcode" required>
+                        <div *ngIf="formPcode.touched && formPcode.invalid" class="alert">Postal code is required.</div>
                     </div>
                     <div class="item">
                         <label for="city">City</label>
-                        <input id="city" [(ngModel)]="city" type="text" name="city" required>
+                        <input #formCity="ngModel" id="city" [(ngModel)]="city" type="text" name="city" required>
+                        <div *ngIf="formCity.touched && formCity.invalid" class="alert">City name is required.</div>
                     </div>
                     <div class="item">
                         <label for="phone">Phone</label>
-                        <input id="phone" [(ngModel)]="phone" type="tel" name="phone" required>
+                        <input #formPhone="ngModel" id="phone" [(ngModel)]="phone" type="tel" name="phone" required>
+                        <div *ngIf="formPhone.touched && formPhone.invalid" class="alert">Phone number is required.</div>
                     </div>
                 </div>
             </fieldset>
@@ -65,15 +72,18 @@
                 <div class="form-container">
                     <div class="item">
                         <label for="email">Email</label>
-                        <input id="email" [(ngModel)]="email" type="email" name="email" required>
+                        <input #formEmail="ngModel" id="email" [(ngModel)]="email" type="email" name="email" required>
+                        <div *ngIf="formEmail.touched && formEmail.invalid" class="alert">Email is required.</div>
                     </div>
                     <div class="item">
                         <label for="password">Password</label>
-                        <input id="password" [(ngModel)]="password" type="password" name="password" required>
+                        <input #formPassword="ngModel" id="password" [(ngModel)]="password" type="password" name="password" required>
+                        <div *ngIf="formPassword.touched && formPassword.invalid" class="alert">Password is required.</div>
                     </div>
                     <div class="item">
                         <label for="pconfirmation">Password confirmation</label>
-                        <input id="pconfirmation" [(ngModel)]="pconfirmation" type="password" name="pconfirmation" required>
+                        <input #formPconfirmation="ngModel" id="pconfirmation" [(ngModel)]="pconfirmation" type="password" name="pconfirmation" required>
+                        <div *ngIf="formPconfirmation.touched && formPconfirmation.invalid" class="alert">Password confirmation is required.</div>
                     </div>
                 </div>
             </fieldset>

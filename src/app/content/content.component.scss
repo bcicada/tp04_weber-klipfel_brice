@@ -50,6 +50,15 @@ main {
                             background-color: $color-black;
                             width: inherit;
                         }
+                        .alert {
+                            height: 1rem;
+                            width: inherit;
+                            background-color: $color-low-red;
+                            font-family: 'ubuntu-bold-italic';
+                            font-size: 0.75rem;
+                            border: 0.1rem solid $color-white;
+                            border-top: none;
+                        }
                     }
                 }
             }
