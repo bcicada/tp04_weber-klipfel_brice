@@ -1,0 +1,11 @@
+@import "../../vars";
+
+aside {
+    margin-left: 1rem;
+    padding: 1rem;
+    background-color: $color-violet;
+    border-radius: 0.1rem;
+    p, h1 {
+        background-color: $color-violet;
+    }
+}

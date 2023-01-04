@@ -1,13 +1,25 @@
 <main>
-    <app-aside></app-aside>
+    <app-aside *ngIf="display"
+        [Civility]="civility"
+        [Name]="name"
+        [Fname]="fname"
+        [Snum]="snum"
+        [Sname]="sname"
+        [Pcode]="pcode"
+        [City]="city"
+        [Phone]="phone"
+        [Email]="email"
+        [Password]="password"
+        [Pconfirmation]="pconfirmation"
+    ></app-aside>
     <section>
-        <form action="#">
+        <form #accountForm="ngForm" (ngSubmit)="onSubmit(accountForm)">
             <fieldset>
                 <legend>Identity info's</legend>
                 <div class="form-container">
                     <div class="item">
                         <label for="civility">Civility</label>
-                        <select id="civility" name="civility" required>
+                        <select id="civility" [(ngModel)]="civility" name="civility" required>
                             <option value="mister">Mr.</option>
                             <option value="madame">Ms.</option>
                             <option value="miss">Miss.</option>
@@ -15,11 +27,11 @@
                     </div>
                     <div class="item">
                         <label for="name">Name</label>
-                        <input id="name" type="text" name="name" required>
+                        <input id="name" [(ngModel)]="name" type="text" name="name" required>
                     </div>
                     <div class="item">
                         <label for="fname">Firstname</label>
-                        <input id="fname" type="text" name="fname" required>
+                        <input id="fname" [(ngModel)]="fname" type="text" name="fname" required>
                     </div>
                 </div>
             </fieldset>
@@ -28,23 +40,23 @@
                 <div class="form-container">
                     <div class="item">
                         <label for="snum">Street number</label>
-                        <input id="snum" type="text" name="snum" required>
+                        <input id="snum" [(ngModel)]="snum" type="text" name="snum" required>
                     </div>
                     <div class="item">
                         <label for="sname">Street name</label>
-                        <input id="sname" type="text" name="sname" required>
+                        <input id="sname" [(ngModel)]="sname" type="text" name="sname" required>
                     </div>
                     <div class="item">
                         <label for="pcode">Postal code</label>
-                        <input id="pcode" type="text" name="pcode" required>
+                        <input id="pcode" [(ngModel)]="pcode" type="text" name="pcode" required>
                     </div>
                     <div class="item">
                         <label for="city">City</label>
-                        <input id="city" type="text" name="city" required>
+                        <input id="city" [(ngModel)]="city" type="text" name="city" required>
                     </div>
                     <div class="item">
                         <label for="phone">Phone</label>
-                        <input id="phone" type="tel" name="phone" required>
+                        <input id="phone" [(ngModel)]="phone" type="tel" name="phone" required>
                     </div>
                 </div>
             </fieldset>
@@ -53,19 +65,19 @@
                 <div class="form-container">
                     <div class="item">
                         <label for="email">Email</label>
-                        <input id="email" type="email" name="email" required>
+                        <input id="email" [(ngModel)]="email" type="email" name="email" required>
                     </div>
                     <div class="item">
                         <label for="password">Password</label>
-                        <input id="password" type="password" name="password" required>
+                        <input id="password" [(ngModel)]="password" type="password" name="password" required>
                     </div>
                     <div class="item">
                         <label for="pconfirmation">Password confirmation</label>
-                        <input id="pconfirmation" type="password" name="pconfirmation" required>
+                        <input id="pconfirmation" [(ngModel)]="pconfirmation" type="password" name="pconfirmation" required>
                     </div>
                 </div>
             </fieldset>
-            <button type="submit">Send</button>
+            <button type="submit" [disabled]="!accountForm.form.valid">Send</button>
         </form>
     </section>
 </main>
