@@ -9,6 +9,7 @@ import { ContentComponent } from './content/content.component';
 import { AsideComponent } from './aside/aside.component';
 import { FormsModule } from '@angular/forms';
 import { InternationalPhoneFormatPipe } from './international-phone-format.pipe';
+import { AlertDirective } from './alert.directive';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { InternationalPhoneFormatPipe } from './international-phone-format.pipe'
     FooterComponent,
     ContentComponent,
     AsideComponent,
-    InternationalPhoneFormatPipe
+    InternationalPhoneFormatPipe,
+    AlertDirective
     ],
   imports: [
     BrowserModule,
