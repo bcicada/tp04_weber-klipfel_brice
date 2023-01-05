@@ -10,6 +10,8 @@ import { AsideComponent } from './aside/aside.component';
 import { FormsModule } from '@angular/forms';
 import { InternationalPhoneFormatPipe } from './international-phone-format.pipe';
 import { AlertDirective } from './alert.directive';
+import { SalesComponent } from './sales/sales.component';
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -19,12 +21,14 @@ import { AlertDirective } from './alert.directive';
     ContentComponent,
     AsideComponent,
     InternationalPhoneFormatPipe,
-    AlertDirective
+    AlertDirective,
+    SalesComponent
     ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

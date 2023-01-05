@@ -1,0 +1,55 @@
+<form #productForm="ngForm" (ngSubmit)="addProduct(productForm)">
+    <fieldset>
+        <legend>Product info's</legend>
+        <div class="form-container">
+            <div class="item">
+                <label for="name" appAlert>Name</label>
+                <input #formName="ngModel" [(ngModel)]="name" type="text" name="name" required>
+                <div *ngIf="formName.touched && formName.invalid" class="alert">Name is required.</div>
+            </div>
+            <div class="item">
+                <label for="type" appAlert>Type</label>
+                <select #formType="ngModel" id="type" [(ngModel)]="type" name="type" required>
+                    <option value="drug">Drug</option>
+                    <option value="medecine">Medecine</option>
+                    <option value="weapon">Weapon</option>
+                    <option value="food">Food</option>
+                    <option value="drink">Drink</option>
+                    <option value="material">Material</option>
+                    <option value="precious">Precious things</option>
+                    <option value="furniture">Furniture</option>
+                    <option value="car">Car</option>
+                    <option value="plane">Plane</option>
+                    <option value="bike">Bike</option>
+                    <option value="motocycle">Motocycle</option>
+                    <option value="tractor">Tractor</option>
+                    <option value="tank">Tank</option>
+                    <option value="clothes">Clothes</option>
+                    <option value="videogame">Video game</option>
+                    <option value="book">Book</option>
+                    <option value="cd">CD</option>
+                    <option value="dvd">DVD</option>
+                    <option value="blueray">Blueray</option>
+                    <option value="creditcard">Credit Card</option>
+                    <option value="data">Data</option>
+                    <option value="household">Household furniture</option>
+                    <option value="alcohol">Alcohol</option>
+                    <option value="tobacco">Tobbaco</option>
+                    <option value="hitman">Hitman</option>
+                    <option value="fakedocument">Fake document</option>
+                    <option value="house">House</option>
+                    <option value="usakumya">Usakumya</option>
+                    <option value="other">Other type</option>
+                </select>
+                <div *ngIf="formType.touched && formType.invalid" class="alert">Type is required.</div>
+            </div>
+            <div class="item">
+                <label for="price" appAlert>Price</label>
+                <input #formPrice="ngModel" id="price" [(ngModel)]="price" type="text" name="price" required>
+                <div *ngIf="formPrice.touched && formPrice.invalid" class="alert">Price is required.</div>
+            </div>
+        </div>
+    </fieldset>
+    <button type="submit" [disabled]="!productForm.form.valid">Send</button>
+</form>
+<button (click)="deleteProduct()">Delete</button>
